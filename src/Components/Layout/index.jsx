@@ -2,40 +2,54 @@ import React from 'react';
 
 import {
   ChakraProvider,
-  Container,
   Box,
   Grid,
   GridItem,
+  ListIcon,
   ListItem,
-  UnorderedList,
+  List,
+  Text,
 } from '@chakra-ui/react';
+
+import { InfoIcon, StarIcon, SettingsIcon } from '@chakra-ui/icons';
 
 function Layout() {
   return (
     <>
       <ChakraProvider>
-        <Container maxW="6xl" centerContent>
-          <Box padding="4" bg="gray.100" w="100%">
-            <Grid
-              templateRows="repeat(2, 1fr)"
-              templateColumns="repeat(5, 1fr)"
-              gap={4}
-            >
-              <GridItem rowSpan={2} colSpan={1}>
-                <Box p={4} bg="gray.50" borderRadius="lg">
-                  <UnorderedList>
-                    <ListItem>Perfil</ListItem>
-                    <ListItem>Amigos</ListItem>
-                    <ListItem>Configurações</ListItem>
-                  </UnorderedList>
-                </Box>
-              </GridItem>
-              <GridItem rowSpan={2} colSpan={4}>
-                <Box p={4} bg="gray.50" borderRadius="lg"></Box>
-              </GridItem>
-            </Grid>
-          </Box>
-        </Container>
+        <Box color="gray.100" padding="4" w="100%">
+          <Grid
+            templateRows="repeat(2, 1fr)"
+            templateColumns="repeat(5, 1fr)"
+            gap={4}
+          >
+            <GridItem rowSpan={2} colSpan={1}>
+              <Box p={4} bg="gray.700" boxShadow="base" borderRadius="lg">
+                <Text fontSize="2xl" mb={3}>
+                  Menu
+                </Text>
+                <List spacing={3}>
+                  <ListItem>
+                    <ListIcon as={InfoIcon} />
+                    Dispositivos
+                  </ListItem>
+                  <ListItem>
+                    <ListIcon as={StarIcon} />
+                    Favoritos
+                  </ListItem>
+                  <ListItem>
+                    <ListIcon as={SettingsIcon} />
+                    Configurações
+                  </ListItem>
+                </List>
+              </Box>
+            </GridItem>
+            <GridItem rowSpan={2} colSpan={4}>
+              <Text fontSize="3xl">Dispositivos conectados</Text>
+              <Box p={4} bg="gray.700" boxShadow="base" borderRadius="lg"></Box>
+            </GridItem>
+          </Grid>
+        </Box>
       </ChakraProvider>
     </>
   );

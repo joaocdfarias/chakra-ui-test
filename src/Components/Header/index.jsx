@@ -4,7 +4,7 @@ import { ChakraProvider, Box, Link, Flex, Spacer } from '@chakra-ui/react';
 function Header() {
   return (
     <ChakraProvider>
-      <Box bg="tomato" w="100%" p={4} color="white">
+      <Box bg="gray.700" w="100%" p={4} color="gray.100" boxShadow="base">
         <Flex alignItems="center">
           <h1>
             <Link fontSize="3xl">Logo</Link>
